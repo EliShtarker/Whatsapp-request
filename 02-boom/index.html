@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The final countdown</title>
+    <style>
+        body {
+            color: white;
+            background-color: black;
+            text-align: center;
+            font-size: 150px;
+            margin-top: 300px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: gray;
+            border: 3px solid 1;
+            border-radius: 75px;
+        }
+
+        p {
+            font-weight: bolder;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: black;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <audio id="hiddenAudio">
+        <source src="theFinalCountdown.mp3" type="audio/mp3">
+    </audio>
+
+    <div id="countdown"></div>
+    <button onclick="startCountdown()" id="startButton">
+        <p>Start Countdown</p>
+    </button>
+
+    <script>
+        let countdown = 8;
+        let interval;
+
+        function updateCountdown() {
+            document.getElementById('countdown').innerHTML = countdown;
+            countdown--;
+
+            if (countdown < 0) {
+                clearInterval(interval);
+                document.getElementById('countdown').innerHTML = '<p style="color:red;">BOOM!<p/>';
+            }
+        }
+
+        function startCountdown() {
+            button = document.getElementById('startButton');
+            button.classList.add('hidden');
+            document.getElementById('hiddenAudio').play().then(() => {
+                document.getElementById('hiddenAudio').muted = false;
+                updateCountdown();
+                interval = setInterval(updateCountdown, 1000);
+            });
+        }
+    </script>
+</body>
+
+</html>
