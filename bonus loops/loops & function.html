@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loops</title>
+</head>
+<style>
+    p {}
+</style>
+
+<body>
+    <script>
+        //start of EX:1
+
+        document.write("EX:1" + "<br /><br />");
+
+        document.write("In do for <br /><br />");
+
+        for (i = 12; i <= 24; i++) {
+            document.write(i + ' ');
+        }
+
+        document.write("<br /><br /><br />");
+
+        document.write("In do while <br /><br />");
+
+        let a = 12;
+
+        do {
+            document.write(a + ' ');
+            a++;
+        } while (a <= 24);
+
+        //end
+
+        document.write("<hr />");
+
+        //start of EX:2
+
+
+        document.write("EX:2" + "<br /><br />");
+
+        document.write("In do for <br /><br />");
+
+        for (i = 7; i <= 37; i += 2) {
+            document.write(i + ' ');
+        }
+
+        document.write("<br /><br /><br />");
+
+        document.write("In do while <br /><br />");
+
+        let b = 7;
+        do {
+            document.write(b + ' ');
+            b += 2;
+        } while (b <= 37);
+        document.write("<br />");
+
+        //end
+
+        document.write("<hr />");
+
+        //start of EX:3
+
+        document.write("EX:3" + "<br /><br />");
+
+        document.write("In do for <br /><br />");
+
+        for (i = 10; i >= -20; i -= 2) {
+            document.write(i + ' ');
+        }
+
+        document.write("<br /><br />");
+
+
+        document.write("In do while <br /><br />");
+
+        let c = 10;
+        do {
+            document.write(c + ' ');
+            c -= 2;
+        } while (c >= -20);
+        document.write("<br />");
+
+        //end
+
+        document.write("<hr />");
+
+        document.write("EX:4 + bonus (console.log)" + "<br /><br />");
+
+        //this is the bonus if statemnts using ? & :
+        for (i = 1; i <= 46; i++) {
+            console.log((i % 3 === 0 && i % 5 === 0) ? 'FizzBuzz' : (i % 3 === 0 ? 'Fizz' : '') + (i % 5 === 0 ? 'Buzz' : '') || i)
+        }
+
+
+        document.write("In do for <br /><br />");
+
+        for (let i = 1; i <= 45; i++) {
+            if (i % 3 === 0 && i % 5 === 0) {
+                document.write("(FizzBuzz)" + ' ');
+            } else if (i % 3 === 0) {
+                document.write("(Fizz)" + ' ');
+            } else if (i % 5 === 0) {
+                document.write("(Buzz)" + ' ');
+            } else {
+                document.write(i + ' ');
+            }
+        }
+
+        document.write("<br /><br />");
+
+        document.write("In do while <br /><br />");
+
+        let d = 1;
+
+        do {
+            if (d % 3 === 0 && d % 5 === 0) {
+                document.write("(FizzBuzz)" + ' ');
+            } else if (d % 3 === 0) {
+                document.write("(Fizz)" + ' ');
+            } else if (d % 5 === 0) {
+                document.write("(Buzz)" + ' ');
+            } else {
+                document.write(d + ' ');
+            }
+
+            d++;
+        } while (d <= 45);
+
+
+        document.write("<br />");
+
+        document.write("<hr />");
+
+        document.write("EX:5" + "<br /><br />");
+
+        function math(Array) {
+            let sum = 0;
+
+            for (let i = 0; i < Array.length; i++) {
+                sum += Array[i];
+            }
+
+            document.write("The sum of the numbers is: " + sum);
+        }
+
+        let Array = [1, 13, 22, 123, 49, 34, 5, 24, 57, 45];
+        math(Array);
+
+
+    </script>
+</body>
+
+</html>
